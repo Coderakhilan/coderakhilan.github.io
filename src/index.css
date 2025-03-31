@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  background-color: #000000;
+  color: #c4f9fe;
+  font-family: 'VT323', monospace;
+}
+
+@layer components {
+  .terminal-button {
+    @apply px-4 py-2 text-terminal-blue border border-terminal-blue 
+    hover:bg-terminal-blue hover:text-terminal-black transition-all duration-300;
+  }
+  
+  .terminal-container {
+    @apply border border-terminal-blue p-4 bg-terminal-black;
+  }
+}
+
+@keyframes loadingCircle {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+.loading-circle {
+  animation: loadingCircle 1s ease-in-out infinite;
+  stroke: #c4f9fe;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
